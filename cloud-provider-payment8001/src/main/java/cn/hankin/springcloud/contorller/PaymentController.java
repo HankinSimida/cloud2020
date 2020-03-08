@@ -23,25 +23,25 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/payment/create")
-    public CommonResult<Integer> create(Payment payment) {
+    public CommonResult create(Payment payment) {
         int result = paymentService.create(payment);
         log.info("insert int result:" + result);
         if (result > 0) {
-            return new CommonResult<>(200, "insert success", result);
+            return new CommonResult(200, "insert success", result);
         } else {
-            return new CommonResult<Integer>(444, "insert error", null);
+            return new CommonResult(444, "insert error", null);
         }
     }
 
     @GetMapping("/payment/get/{id}")
-    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
+    public CommonResult getPaymentById(@PathVariable("id") Long id) {
         Payment result = paymentService.getPaymentById(id);
         log.info("query result:" + result);
 
         if (result != null) {
-            return new CommonResult<>(200, "query success", result);
+            return new CommonResult(200, "query success", result);
         } else {
-            return new CommonResult<Payment>(444, "No Record: " + id, null);
+            return new CommonResult(444, "No Record: " + id, null);
         }
     }
 }
