@@ -1,10 +1,9 @@
-package cn.hankin.springcloud.contorller;
+package cn.hankin.springcloud.controller;
 
 import cn.hankin.springcloud.entities.CommonResult;
 import cn.hankin.springcloud.entities.Payment;
 import cn.hankin.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;

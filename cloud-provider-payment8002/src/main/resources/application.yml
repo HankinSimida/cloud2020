@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
@@ -19,14 +19,13 @@ eureka:
 #      defaultZone: http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
   instance:
-    instance-id: hankin-payment8001
-
+    instance-id: hankin-payment8002
+#    prefer-ip-address: false
     #eureka心跳发送时间间隔(默认30s)
 #    lease-renewal-interval-in-seconds: 1
 #    prefer-ip-address: false
 #   eureka最后一次接受都心跳后等待时间的上线默认90s
 #   lease-expiration-duration-in-seconds: 2
-
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: cn.hankin.springcloud.entities
