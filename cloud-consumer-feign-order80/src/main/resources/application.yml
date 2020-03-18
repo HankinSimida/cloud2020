@@ -1,0 +1,21 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+
+ribbon:
+#  建立资源时间
+  ReadTimeout: 5000
+#  读取服务资源所用时间
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    # feign 日志以什么级别监控哪个接口
+    cn.hankin.springcloud.service.PaymentFeignService: debug
