@@ -12,10 +12,12 @@ spring:
       discovery:
         server-addr: localhost8848
   datasource:
-    url: jdbc:mysql://localhost:3306/seata_order
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/seate_order?useUnicode=true&characterEncoding=utf-8&useSSL=false
     driver-class-name: org.gjt.mm.mysql.Driver
     username: root
     password: root
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
