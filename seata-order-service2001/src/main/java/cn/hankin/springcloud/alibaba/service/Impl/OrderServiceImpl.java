@@ -5,10 +5,12 @@ import cn.hankin.springcloud.alibaba.domain.Order;
 import cn.hankin.springcloud.alibaba.service.AccountService;
 import cn.hankin.springcloud.alibaba.service.OrderService;
 import cn.hankin.springcloud.alibaba.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.rmi.Naming;
 
 /**
  * @author hankin
@@ -27,6 +29,7 @@ public class OrderServiceImpl implements OrderService {
     private StorageService storageService;
 
     @Override
+    @GlobalTransactional(name = "hankin-define-tx",rollbackFor = Exception.class)
     public void create(Order order) {
         log.info("---新建订单");
         orderDao.create(order);
